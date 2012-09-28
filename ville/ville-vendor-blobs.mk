@@ -16,7 +16,9 @@
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \
-	vendor/htc/ville/proprietary/lib/libacdbloader.so:obj/lib/libacdbloader.so
+	vendor/htc/ville/proprietary/lib/libacdbloader.so:obj/lib/libacdbloader.so \
+	vendor/htc/ville/proprietary/lib/libril.so:obj/lib/libril.so \
+	vendor/htc/ville/proprietary/lib/libv8.so:obj/lib/libv8.so
 
 PRODUCT_COPY_FILES += \
   vendor/htc/ville/proprietary/etc/agps_rm:system/etc/agps_rm \
@@ -25,14 +27,15 @@ PRODUCT_COPY_FILES += \
   vendor/htc/ville/proprietary/bin/charging:system/bin/charging \
   vendor/htc/ville/proprietary/bin/ewtzmud:system/bin/ewtzmud \
   vendor/htc/ville/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init \
-  vendor/htc/ville/proprietary/bin/hostapd:system/bin/hostapd \
+  vendor/htc/ville/proprietary/bin/mm-abl-daemon:system/bin/mm-abl-daemon \
   vendor/htc/ville/proprietary/bin/mm-qcamera-daemon:system/bin/mm-qcamera-daemon \
   vendor/htc/ville/proprietary/bin/mpdecision:system/bin/mpdecision \
   vendor/htc/ville/proprietary/bin/netmgrd:system/bin/netmgrd \
   vendor/htc/ville/proprietary/bin/netsharing:system/bin/netsharing \
-  vendor/htc/ville/proprietary/bin/qmuxd:system/bin/qmuxd \
   vendor/htc/ville/proprietary/bin/rmt_storage:system/bin/rmt_storage \
+  vendor/htc/ville/proprietary/bin/qmuxd:system/bin/qmuxd \
   vendor/htc/ville/proprietary/bin/thermald:system/bin/thermald \
+  vendor/htc/ville/proprietary/bin/time_daemon:system/bin/time_daemon \
   vendor/htc/ville/proprietary/bin/zchgd:system/bin/zchgd \
   vendor/htc/ville/proprietary/lib/libacdbloader.so:system/lib/libacdbloader.so \
   vendor/htc/ville/proprietary/lib/libaudcal.so:system/lib/libaudcal.so \
@@ -42,9 +45,11 @@ PRODUCT_COPY_FILES += \
   vendor/htc/ville/proprietary/lib/libchromatix_s5k3h2yx_preview.so:system/lib/libchromatix_s5k3h2yx_preview.so \
   vendor/htc/ville/proprietary/lib/libchromatix_s5k3h2yx_zsl.so:system/lib/libchromatix_s5k3h2yx_zsl.so \
   vendor/htc/ville/proprietary/lib/hw/camera.msm8960.so:system/lib/hw/camera.msm8960.so \
+  vendor/htc/ville/proprietary/lib/libcam_oem_plugin.so:system/lib/libcam_oem_plugin.so \
+  vendor/htc/ville/proprietary/lib/libcamera_client.so:system/lib/libcamera_client.so \
   vendor/htc/ville/proprietary/lib/libcameraface.so:system/lib/libcameraface.so \
   vendor/htc/ville/proprietary/lib/libcamerapp.so:system/lib/libcamerapp.so \
-  vendor/htc/ville/proprietary/lib/libcam_oem_plugin.so:system/lib/libcam_oem_plugin.so \
+  vendor/htc/ville/proprietary/lib/libcameraservice.so:system/lib/libcameraservice.so \
   vendor/htc/ville/proprietary/lib/libDxOAF.so:system/lib/libDxOAF.so \
   vendor/htc/ville/proprietary/lib/libgemini.so:system/lib/libgemini.so \
   vendor/htc/ville/proprietary/lib/libmmcamera_frameproc.so:system/lib/libmmcamera_frameproc.so \
@@ -55,28 +60,27 @@ PRODUCT_COPY_FILES += \
   vendor/htc/ville/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
   vendor/htc/ville/proprietary/lib/libOlaEngine.so:system/lib/libOlaEngine.so \
   vendor/htc/ville/proprietary/lib/libposteffect.so:system/lib/libposteffect.so \
-  vendor/htc/ville/proprietary/lib/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so \
   vendor/htc/ville/proprietary/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
   vendor/htc/ville/proprietary/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
   vendor/htc/ville/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
   vendor/htc/ville/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
   vendor/htc/ville/proprietary/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
   vendor/htc/ville/proprietary/lib/libC2D2.so:system/lib/libC2D2.so \
-  vendor/htc/ville/proprietary/lib/libc2d2_z180.so:system/lib/libc2d2_z180.so \
-  vendor/htc/ville/proprietary/lib/libgsl.so:system/lib/libgsl.so \
-  vendor/htc/ville/proprietary/lib/libOpenVG.so:system/lib/libOpenVG.so \
   vendor/htc/ville/proprietary/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
   vendor/htc/ville/proprietary/lib/hw/gps.default.so:system/lib/hw/gps.default.so \
+  vendor/htc/ville/proprietary/lib/libgps.so:system/lib/libgps.so \
   vendor/htc/ville/proprietary/lib/libgps.utils.so:system/lib/libgps.utils.so \
   vendor/htc/ville/proprietary/lib/libloc_adapter.so:system/lib/libloc_adapter.so \
   vendor/htc/ville/proprietary/lib/libloc_api_v02.so:system/lib/libloc_api_v02.so \
   vendor/htc/ville/proprietary/lib/libloc_eng.so:system/lib/libloc_eng.so \
-  vendor/htc/ville/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
+  vendor/htc/ville/proprietary/lib/libloc_ext.so:system/lib/libloc_ext.so \
+  vendor/htc/ville/proprietary/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so \
+  vendor/htc/ville/proprietary/lib/libgsl.so:system/lib/libgsl.so \
   vendor/htc/ville/proprietary/lib/libmm-color-convertor.so:system/lib/libmm-color-convertor.so \
+  vendor/htc/ville/proprietary/lib/libOpenVG.so:system/lib/libOpenVG.so \
+  vendor/htc/ville/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
   vendor/htc/ville/proprietary/lib/libmmparser.so:system/lib/libmmparser.so \
   vendor/htc/ville/proprietary/lib/libmmparser_divxdrmlib.so:system/lib/libmmparser_divxdrmlib.so \
-  vendor/htc/ville/proprietary/lib/libwvm.so:system/lib/libwvm.so \
-  vendor/htc/ville/proprietary/lib/libWVStreamControlAPI_L3.so:system/lib/libWVStreamControlAPI_L3.so \
   vendor/htc/ville/proprietary/lib/libdiag.so:system/lib/libdiag.so \
   vendor/htc/ville/proprietary/lib/libdsi_netctrl.so:system/lib/libdsi_netctrl.so \
   vendor/htc/ville/proprietary/lib/libdsutils.so:system/lib/libdsutils.so \
@@ -93,4 +97,6 @@ PRODUCT_COPY_FILES += \
   vendor/htc/ville/proprietary/lib/libqc-opt.so:system/lib/libqc-opt.so \
   vendor/htc/ville/proprietary/lib/libril-qc-qmi-1.so:system/lib/libril-qc-qmi-1.so \
   vendor/htc/ville/proprietary/lib/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
-  vendor/htc/ville/proprietary/lib/hw/sensors.ville.so:system/lib/hw/sensors.ville.so
+  vendor/htc/ville/proprietary/lib/libril.so:system/lib/libril.so \
+  vendor/htc/ville/proprietary/lib/hw/sensors.ville.so:system/lib/hw/sensors.ville.so \
+  vendor/htc/ville/proprietary/lib/libv8.so:system/lib/libv8.so
